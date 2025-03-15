@@ -1,0 +1,21 @@
+/* font-family: "Poppins", sans-serif;
+font-family: "Hind Siliguri", sans-serif; */
+
+
+
+#pc-toggle{
+    display: none;
+}
+.mobile{
+    display: none;
+}
+ @media screen and (max-width:660px) {
+    .pc{
+        display: none;
+    }
+    #pc-toggle{
+        display: inline;
+    }
+
+
+ }
