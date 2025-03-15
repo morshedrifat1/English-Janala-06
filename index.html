@@ -22,6 +22,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- sweetalert2 CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- tailwind castom css  -->
     <style type="text/tailwindcss">
       @theme {
@@ -35,13 +38,13 @@
     
   <!-- header section start  -->
 
-  <header class="bg-[#eeeeee] px-5 lg:px-10 border-b border-b-[#c6bdbd] relative">
+  <header id="header" class="bg-[#eeeeee] px-5 lg:px-10 border-b border-b-[#c6bdbd] relative hidden">
     <nav class="max-w-[1760px] mx-auto flex justify-between items-center py-5">
       <div><a href="index.html"><img src="img/logo.png" alt=""></a></div>
       <div class="pc">
         <ul class="flex gap-4">
-          <li><a class="group" href="#faq"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-circle-question text-base mr-[6px] text-primary group-hover:text-white"></i>FAQ</button></a></li>
-          <li><a class="group" href="#learn"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i>Learn</button></a></li>
+          <li><a class="group" href="#faq-section"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-circle-question text-base mr-[6px] text-primary group-hover:text-white"></i>FAQ</button></a></li>
+          <li><a class="group" href="#vocabulari-section"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i>Learn</button></a></li>
           <li><a class="group" href="index.html"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-right-from-bracket text-base mr-[6px] text-primary group-hover:text-white"></i>Logout</button></a></li>
         </ul>
        
@@ -49,21 +52,125 @@
       <button id="pc-toggle"><i class="fa-solid fa-bars-staggered text-2xl"></i></button>
     </nav>
 
+    <!-- mobile nevBar -->
     <div id="mobile-nav" class="bg-slate-50 p-6 absolute top-0 right-0 h-screen w-[300px] hidden">
       <ul class="flex flex-col gap-4 relative">
-        <button id="nav-close" class="absolute top-0 right-0 bg-primary px-3 py-2 rounded-full "><i class="fa-solid fa-xmark text-white"></i></button>
-        <li><a class="group" href="#faq"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-circle-question text-base mr-[6px] text-primary group-hover:text-white"></i>FAQ</button></a></li>
-        <li><a class="group" href="#learn"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i>Learn</button></a></li>
+        <button id="nav-close" class="absolute top-0 right-0 bg-primary px-3 py-[6px] rounded-full "><i class="fa-solid fa-xmark text-white"></i></button>
+        <li><a class="group" href="#faq-section"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-circle-question text-base mr-[6px] text-primary group-hover:text-white"></i>FAQ</button></a></li>
+        <li><a class="group" href="#vocabulari-section"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i>Learn</button></a></li>
         <li><a class="group" href="index.html"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-right-from-bracket text-base mr-[6px] text-primary group-hover:text-white"></i>Logout</button></a></li>
       </ul>
       
     </div>
   </header>
 
+  <!-- header section close  -->
+
+  <!-- hero section start  -->
+
+  <section id="heroSection" class="px-5 lg:px-20 bg-white">
+
+    <div class="max-w-[1760px] mx-auto py-14  md:grid md:grid-cols-2 md:items-center md:justify-between">
+      <!-- hero text -->
+      <div class="space-y-4 lg:space-y-6">
+        <h1 class="font-primary text-3xl md:text-4xl lg:text-5xl text-[#18181B] font-bold"><span class="text-[#00BCFF]">English </span>is Easy!!</h1>
+        <p class="font-second text-base leading-7 md:text-lg md:leading-8 xl:text-2xl xl:leading-10 text-[#18181B] font-medium">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+
+        <div>
+          <form class="flex flex-col gap-5" action="">
+            <input class="font-primary text-base border border-[#d1d1d1] px-4 py-2 rounded-md placeholder:text-sm placeholder:text-[#18181B50] w-full md:w-[320px] xl:w-[400px]" type="text" required name="" placeholder="Enter Your Name" id="userName">
+            <input class="font-primary text-base border border-[#d1d1d1] px-4 py-2 rounded-md placeholder:text-sm placeholder:text-[#18181B50] h-full md:w-[320px] xl:w-[400px]" type="password" placeholder="Enter Login Code (123456)" required name="" id="password">
+            <button id="submit" class="bg-primary w-[114px] h-10 rounded-md text-[#E0E7FF]">Get Started</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- hero img  -->
+      <div class="justify-items-end">
+        <img class="md:w-[600px]" src="img/hero-student.png" alt="">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- hero section close  -->
+
+  <!-- Vocabularies section open  -->
+
+   <section id="vocabulari-section" class="px-5 lg:px-20 bg-white hidden">
+    <div class="max-w-[1760px] mx-auto py-14">
+      <div>
+        <h1 class="font-primary text-2xl md:text-4xl font-bold text-center"><span class="text-[#00BCFF]">Let's </span>Learn  Vocabularies</h1>
+      </div>
+
+      <!-- Vocabularies items  -->
 
 
+      <div id="lesson-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-5   mt-5 md:mt-10 justify-center">
+
+      </div>
+
+      <div class="bg-[#f8f8f8] max-w-[1760px] mx-auto py-10 sm:py-16 text-center space-y-3 rounded-3xl mt-8 md:mt-10">
+        <p class="font-second text-[#79716B] text-sm">আপনি এখনো কোন Lesson Select করেন নি</p>
+        <h1 class="font-second text-[#292524] text-xl sm:text-[34px] font-medium">একটি Lesson Select করুন।</h1>
+      </div>
+    </div>
+   </section>
 
 
+  <!-- Vocabularies section close  -->
+
+  <!-- faq section start  -->
+  <section id="faq-section" class="px-5 lg:px-20 bg-white hidden">
+    <div class="max-w-[1760px] mx-auto py-14 pb-24">
+      <div>
+        <h1 class="font-primary text-2xl md:text-4xl font-bold text-center"><span class="text-[#00BCFF]">Frequently </span>Asked Questions </h1>
+      </div>
+
+      <!-- faq  -->
+      <div class="faq mt-10 md:mt-14 grid gap-5">
+        <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title font-semibold">How do I create an account?</div>
+          <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
+          <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold">How do I update my profile information?</div>
+          <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- faq section close  -->
+
+
+  <!-- footer section open  -->
+    <footer id="footer" class="px-5 lg:px-20 bg-white border-t border-[#e2e2e2]">
+      <div class="max-w-[1760px] mx-auto py-10 lg:py-20 flex flex-wrap gap-5 justify-between items-end ">
+        <div>
+          <img class="w-[170px]" src="img/logo.png" alt="">
+          <p class="font-second text-xl font-medium text-black mt-5">ইংরেজি শিখুন সহজে</p>
+          <p class="font-second text-base text-black mt-2">Providing ED-Tech Applications since 2025</p>
+        </div>
+
+        <div>
+          <p class="text-sm font-primary font-semibold text-[#18181B]">Follow us</p>
+          <ul class="flex flex-wrap gap-4 mt-3">
+            <li><i class="fa-brands fa-facebook text-2xl"></i></li>
+            <li><i class="fa-brands fa-youtube text-2xl"></i></li>
+            <li><i class="fa-brands fa-instagram text-2xl"></i></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  <!-- footer section close  -->
+    <script src="script/login.js"></script>
     <script src="script/index.js"></script>
     <script src="script/nevBar.js"></script>
   </body>

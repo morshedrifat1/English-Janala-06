@@ -16,6 +16,8 @@ font-family: "Hind Siliguri", sans-serif; */
     #pc-toggle{
         display: inline;
     }
-
-
  }
+
+html{
+    scroll-behavior: smooth; 
+}
