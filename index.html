@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>B11-A6-English-Janala</title>
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
     <!-- css file link  -->
      <link rel="stylesheet" href="style/style.css">
 
     <!-- google font CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- fontawesome icon CDN -->
     <script src="https://kit.fontawesome.com/a20be2795a.js" crossorigin="anonymous"></script>
@@ -31,6 +32,7 @@
         --color-primary: #422AD5;
         --font-primary: "Poppins", "sans-serif";
         --font-second: "Hind Siliguri", "sans-serif";
+        --font-third: "Inter", 'sans-serif';
       }
     </style>
   </head>
@@ -53,7 +55,7 @@
     </nav>
 
     <!-- mobile nevBar -->
-    <div id="mobile-nav" class="bg-slate-50 p-6 absolute top-0 right-0 h-screen w-[300px] hidden">
+    <div id="mobile-nav" class="bg-slate-50 p-6 absolute top-0 right-0 h-screen w-[300px] hidden fixed z-10">
       <ul class="flex flex-col gap-4 relative">
         <button id="nav-close" class="absolute top-0 right-0 bg-primary px-3 py-[6px] rounded-full "><i class="fa-solid fa-xmark text-white"></i></button>
         <li><a class="group" href="#faq-section"><button class="cursor-pointer border border-primary group-hover:bg-primary text-primary group-hover:text-white text-sm font-semibold px-5 py-[10px] rounded-md"><i class="fa-solid fa-circle-question text-base mr-[6px] text-primary group-hover:text-white"></i>FAQ</button></a></li>
@@ -80,7 +82,7 @@
           <form class="flex flex-col gap-5" action="">
             <input class="font-primary text-base border border-[#d1d1d1] px-4 py-2 rounded-md placeholder:text-sm placeholder:text-[#18181B50] w-full md:w-[320px] xl:w-[400px]" type="text" required name="" placeholder="Enter Your Name" id="userName">
             <input class="font-primary text-base border border-[#d1d1d1] px-4 py-2 rounded-md placeholder:text-sm placeholder:text-[#18181B50] h-full md:w-[320px] xl:w-[400px]" type="password" placeholder="Enter Login Code (123456)" required name="" id="password">
-            <button id="submit" class="bg-primary w-[114px] h-10 rounded-md text-[#E0E7FF]">Get Started</button>
+            <button id="submit" class="bg-primary text-base font-medium font-primary w-[125px] h-10 rounded-md text-[#E0E7FF] cursor-pointer">Get Started</button>
           </form>
         </div>
       </div>
@@ -98,25 +100,56 @@
   <!-- Vocabularies section open  -->
 
    <section id="vocabulari-section" class="px-5 lg:px-20 bg-white hidden">
-    <div class="max-w-[1760px] mx-auto py-14">
+    <div class="max-w-[1760px] mx-auto py-10 sm:py-14">
       <div>
         <h1 class="font-primary text-2xl md:text-4xl font-bold text-center"><span class="text-[#00BCFF]">Let's </span>Learn  Vocabularies</h1>
       </div>
 
-      <!-- Vocabularies items  -->
+      <!-- Vocabularies  lesson list  -->
+      <div id="lesson-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-5 mt-5 md:mt-10 justify-center">
 
+        <!-- ---------------------- 
+        lesson list load 
+        ---------------------- -->
+      </div>
 
-      <div id="lesson-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-5   mt-5 md:mt-10 justify-center">
+      <!-- vocabularies lesson section  -->
+        <div id="lessonContent-container" class="bg-[#F8F8F8] p-5 md:p-8 mt-9 rounded-xl grid md:grid-cols-2 xl:grid-cols-3 gap-6 hidden">
+          <!-- ---------------------- 
+            lesson content load 
+          ---------------------- -->
+        </div>
 
       </div>
 
-      <div class="bg-[#f8f8f8] max-w-[1760px] mx-auto py-10 sm:py-16 text-center space-y-3 rounded-3xl mt-8 md:mt-10">
+
+      <!-- lessons details popup -->
+       
+      <dialog id="my_modal_4" class="modal sm:modal-middle">
+        <div class="modal-box">
+          <div id="lesson-det" class="p-3 lg:p-5 border border-[#EDF7FF] rounded-xl grid gap-6 md:gap-7">
+            
+              <button class="bg-primary px-8 py-2 rounded-lg text-lg text-white font-second font-medium cursor-pointer">Complete Learning</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+
+      <!-- select lesson section  -->
+      <div id="selectLesson" class="bg-[#f8f8f8] py-10 sm:py-16 text-center space-y-3 rounded-3xl mb-16">
         <p class="font-second text-[#79716B] text-sm">আপনি এখনো কোন Lesson Select করেন নি</p>
         <h1 class="font-second text-[#292524] text-xl sm:text-[34px] font-medium">একটি Lesson Select করুন।</h1>
       </div>
     </div>
    </section>
 
+   <!-- spiner -->
+    <section id="spin-loader" class="flex justify-center items-center hidden">
+      <span class="loading loading-dots loading-xl"></span>
+    </section>
+   
 
   <!-- Vocabularies section close  -->
 
