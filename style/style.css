@@ -19,5 +19,14 @@ font-family: "Hind Siliguri", sans-serif; */
  }
 
 html{
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
+}
+
+.active{
+    background-color: #422ad5;
+    color: white;
+}
+
+.active i{
+    color: white;
 }

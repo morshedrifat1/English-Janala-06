@@ -9,10 +9,9 @@ document.getElementById("submit").addEventListener('click', (event) => {
         alert("Wrong Password Contact admin to get your Login Code");
     }
     else {
-        window.location.href = "#vocabulari-section";
+
         document.getElementById("header").classList.remove('hidden');
         document.getElementById("vocabulari-section").classList.remove("hidden");
-        document.getElementById("faq-section").classList.remove("hidden");
         document.getElementById("faq-section").classList.remove("hidden");
         document.getElementById("heroSection").classList.add("hidden");
 

@@ -40,7 +40,7 @@
     
   <!-- header section start  -->
 
-  <header id="header" class="bg-[#eeeeee] px-5 lg:px-10 border-b border-b-[#c6bdbd] relative hidden">
+  <header id="header" class="bg-[#eeeeee] px-5 lg:px-10 border-b border-b-[#c6bdbd] relative hidden sticky top-0 z-10">
     <nav class="max-w-[1760px] mx-auto flex justify-between items-center py-5">
       <div><a href="index.html"><img src="img/logo.png" alt=""></a></div>
       <div class="pc">
@@ -164,18 +164,112 @@
       <div class="faq mt-10 md:mt-14 grid gap-5">
         <div class="collapse collapse-arrow bg-base-100 border border-base-300">
           <input type="radio" name="my-accordion-2" checked="checked" />
-          <div class="collapse-title font-semibold">How do I create an account?</div>
-          <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+          <div class="collapse-title font-semibold"><h1>The difference between var, let, and const?</h1></div>
+          <div class="collapse-content text-sm">
+            <div>
+              <h1 class="font-primary font-semibold text-md">var: (Old Way to Declare Variables)</h1>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ Used before ES6.</li>
+                <li>✔️ Function-scoped (only works inside functions)</li>
+                <li>✔️ Can be changed and redeclared</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <h1 class="font-primary font-semibold text-md">let (Modern way to Declare Variables)</h1>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ Introduced in ES6.</li>
+                <li>✔️ Block-scoped (works only inside {} blocks).</li>
+                <li>✔️ Can be changed</li>
+              </ul>
+            </div>
+            <div class="mt-4"> 
+              <h1 class="font-primary font-semibold text-md">const: (For fixed values)  </h1>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ Block-scoped, like let</li>
+                <li>✔️ Hoisted but not initialized.</li>
+                <li>✔️ Cannot be reassigned (immutable).</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="collapse collapse-arrow bg-base-100 border border-base-300">
           <input type="radio" name="my-accordion-2" />
-          <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
-          <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+          <div class="collapse-title font-semibold"><h1>The difference between map(), forEach(), and filter()?</h1></div>
+          <div class="collapse-content text-sm">
+            <div>
+              <h1 class="font-primary font-semibold text-md">map() – Creates a New Array</h1>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ Returns a new array with modified values.</li>
+                <li>✔️ Does not change the original array.</li>
+                <li>✔️ Best for transforming data.</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <h1 class="font-primary font-semibold text-md">forEach() – Just Loops, No Return</h1>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ Does NOT return a new array.</li>
+                <li>✔️ Changes the original array if modified inside.</li>
+                <li>✔️ Best for performing actions (e.g., logging, updating DOM).</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <h1 class="font-primary font-semibold text-md">filter() – Returns a New Array with Some Items</h1>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ Returns a new array with elements that pass a condition.</li>
+                <li>✔️ Best for filtering data.</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="collapse collapse-arrow bg-base-100 border border-base-300">
           <input type="radio" name="my-accordion-2" />
-          <div class="collapse-title font-semibold">How do I update my profile information?</div>
-          <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+          <div class="collapse-title font-semibold">Explain arrow functions and how they are different from regular functions?</div>
+          <div class="collapse-content text-sm">
+            <p class="font-primary text-base">Arrow functions (=>) are a shorter way to write functions in JavaScript.  Arrow functions remove function keyword and use => instead.
+            <p class="text-base font-primary mt-3 bg-blue-100 p-3 rounded">
+             example : <br>
+              ----- normal function ---- <br>
+             function sum(num1,num2){<br>
+               const result = num1 + num2;<br>
+             } <br><br>
+
+             ----- arrow function ---- <br>
+            const sum = (num1,num2) => {<br>
+              const result = num1 + num2; <br>
+            }
+
+            </p>
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold"><h1>How JavaScript Promises work?</h1></div>
+          <div class="collapse-content text-sm">
+            <p class="font-primary text-base">A Promise in JavaScript is used to handle asynchronous operations. It helps to execute code that takes time (like fetching data from an API) without stopping the rest of the program.</p>
+            <h1 class="font-primary font-semibold text-md mt-3">What is a Promise?</h1>
+            <p class="font-primary text-base mt-2">A Promise is an object that represents the eventual completion or failure of an asynchronous operation.</p>
+            <p class="mt-2">It has 3 states:</p>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ Pending → Initial state (not yet completed).</li>
+                <li>✔️ Fulfilled → The operation was successful.</li>
+                <li>✔️ Rejected → The operation failed.</li>
+              </ul>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title font-semibold"><h1>How closures work in JavaScript?</h1> </div>
+          <div class="collapse-content text-sm">
+            <p class="font-primary text-base">A closure is when a function remembers the variables from its outer scope, even after the outer function has finished running.</p>
+            <h1 class="font-primary font-semibold text-md mt-3">How Closures Work?</h1>
+            <p class="font-primary text-base mt-2">A closure is created when:</p>
+              <ul class="grid gap-2 mt-2">
+                <li>✔️ A function is inside another function.</li>
+                <li>✔️ The inner function uses variables from the outer function.</li>
+                <li>✔️ The inner function is returned or stored, keeping access to the outer variables.</li>
+              </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -195,9 +289,9 @@
         <div>
           <p class="text-sm font-primary font-semibold text-[#18181B]">Follow us</p>
           <ul class="flex flex-wrap gap-4 mt-3">
-            <li><i class="fa-brands fa-facebook text-2xl"></i></li>
-            <li><i class="fa-brands fa-youtube text-2xl"></i></li>
-            <li><i class="fa-brands fa-instagram text-2xl"></i></li>
+            <a target="_blank" href="https://facebook.com/morshedrifat1"><li><i class="fa-brands fa-facebook text-2xl"></i></li></a>
+            <a href="#"><li><i class="fa-brands fa-youtube text-2xl"></i></li></a>
+            <a target="_blank" href="https://www.instagram.com/morshedrifat1/"><li><i class="fa-brands fa-instagram text-2xl"></i></li></a>
           </ul>
         </div>
       </div>
