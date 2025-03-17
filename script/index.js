@@ -40,7 +40,7 @@ const displayLesson = (lessonS) => {
   lessonS.forEach((lesson) => {
     const createLessonDiv = document.createElement("div");
     createLessonDiv.innerHTML = `
-            <button onclick="loadLessonContent(${lesson.level_no})" class="btn cursor-pointer border border-primary hover:bg-primary text-primary font-primary group hover:text-white text-sm font-semibold w-full p-5 rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i>${lesson.lessonName}</button>
+            <button onclick="loadLessonContent(${lesson.level_no})" class="btn btn-lg md:btn-xl cursor-pointer border border-primary hover:bg-primary text-primary font-primary group hover:text-white text-sm font-semibold w-full rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i>${lesson.lessonName}</button>
         `;
     lessonContainer.appendChild(createLessonDiv);
   });
