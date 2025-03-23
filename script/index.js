@@ -1,19 +1,27 @@
+// active button status
 function removeSty() {
   const allBtn = document.querySelectorAll(".btn");
   for (const bt of allBtn) {
     bt.classList.remove("text-primary");
-    bt.classList.remove('active');
-    
+    bt.classList.remove("active");
   }
 }
 
-document.getElementById("lesson-container").addEventListener("click", (event) => {
-  const tar = event.target;
-  if (tar.tagName == "BUTTON") {
-    removeSty();
-    tar.classList.add("active");
-  }
-});
+// document.getElementById("lesson-container").addEventListener("click", (event) => {
+//   const tar = event.target;
+//   if (tar.tagName == "BUTTON" || tar.tagName == "I") {
+//     if (tar.parentElement.tagName == 'DIV') {
+//       removeSty();
+//       tar.classList.add("active");
+//     }
+//     else if (tar.parentElement.tagName == 'BUTTON') {
+//       const scBT = tar.parentElement;
+//       removeSty();
+//       scBT.classList.add('active')
+//     }
+
+//   }
+// });
 
 // spin loader section
 const showLoader = () => {
@@ -40,9 +48,16 @@ const displayLesson = (lessonS) => {
   lessonS.forEach((lesson) => {
     const createLessonDiv = document.createElement("div");
     createLessonDiv.innerHTML = `
-            <button onclick="loadLessonContent(${lesson.level_no})" class="btn btn-lg md:btn-xl cursor-pointer border border-primary hover:bg-primary text-primary font-primary group hover:text-white text-sm font-semibold w-full rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i>${lesson.lessonName}</button>
+            <button id="btn-${lesson.level_no}" onclick="loadLessonContent(${lesson.level_no})" class="btn btn-lg md:btn-xl cursor-pointer border border-primary hover:bg-primary text-primary font-primary group hover:text-white text-sm font-semibold w-full rounded-md"><i class="fa-solid fa-book-open text-base mr-[6px] text-primary group-hover:text-white"></i> ${lesson.lessonName}</button>
         `;
     lessonContainer.appendChild(createLessonDiv);
+
+    // active button status
+    const lessBtn = document.getElementById(`btn-${lesson.level_no}`);
+    lessBtn.addEventListener("click", () => {
+      removeSty();
+      lessBtn.classList.add("active");
+    });
   });
 };
 
@@ -68,7 +83,7 @@ const lessonContainerDisplay = (lessonsData) => {
     lessonContentContainer.innerHTML = `
         <div class="bg-[#F8F8F8] rounded-xl grid justify-center justify-items-center gap-4 col-span-full">
           <img class="justify-items-center" src="img/alert-error.png" alt="">
-          <p class="font-second text-[#79716B] text-sm">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+          <p class="font-second text-center text-[#79716B] text-sm">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
           <h1 class="font-second text-[#292524] text-xl sm:text-[34px] font-medium">নেক্সট Lesson এ যান</h1>
         </div>
         `;
@@ -116,12 +131,13 @@ const showLessonDetails = (wordId) => {
 
 const loadLessonDetails = (lessonDetail) => {
   const detailPopup = document.getElementById("lesson-det");
-  detailPopup.innerHTML = `
+
+    detailPopup.innerHTML = `
         <h1 class="font-primary font-semibold text-xl md:text-3xl text-black">${
           lessonDetail.word
         } (<i class="fa-solid fa-microphone-lines"></i><span> :${
-    lessonDetail.pronunciation
-  }</span>)</h1>
+      lessonDetail.pronunciation
+    }</span>)</h1>
               <div class="space-y-3">
                 <h3 class="font-primary font-semibold text-lg md:text-xl text-black">Meaning</h3>
                 <p class="font-second text-xl font-medium text-black">${
@@ -161,7 +177,7 @@ const loadLessonDetails = (lessonDetail) => {
             </div>
     `;
 
-  document.getElementById("my_modal_4").showModal();
+    document.getElementById("my_modal_4").showModal();
 };
 
 // word read sound function
